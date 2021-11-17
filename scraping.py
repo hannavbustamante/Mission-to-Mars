@@ -1,3 +1,7 @@
+#################################################
+# Jupyter Notebook Conversion to Python Script
+#################################################
+
 # Import Splinter, BeautifulSoup, and Pandas
 from splinter import Browser
 from bs4 import BeautifulSoup as soup
@@ -6,6 +10,9 @@ import datetime as dt
 from webdriver_manager.chrome import ChromeDriverManager
 
 
+#################################################
+# Main Web Scraping Bot
+#################################################
 def scrape_all():
     # Initiate headless driver for deployment
     executable_path = {'executable_path': ChromeDriverManager().install()}
@@ -28,6 +35,9 @@ def scrape_all():
     return data
 
 
+#################################################
+# NASA Mars News
+#################################################
 def mars_news(browser):
 
     # Scrape Mars News
@@ -56,6 +66,9 @@ def mars_news(browser):
     return news_title, news_p
 
 
+#################################################
+# JPL Mars Space Images - Featured Image
+#################################################
 def featured_image(browser):
     
     # Visit URL
@@ -83,6 +96,10 @@ def featured_image(browser):
 
     return img_url
 
+
+#################################################
+# Mars Facts
+#################################################
 def mars_facts():
     # Add try/except for error handling
     try:
@@ -99,6 +116,10 @@ def mars_facts():
     # Convert dataframe into HTML format, add bootstrap
     return df.to_html(classes="table table-striped")
 
+
+#################################################
+# Mars Hemispheres
+#################################################
 def hemisphere_image_urls(browser):
     hemisphere_image_urls = []
     # 1. Use browser to visit the URL 
